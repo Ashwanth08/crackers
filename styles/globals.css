@@ -1,0 +1,166 @@
+﻿@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Sri Crackers — festive premium theme tokens.
+ *   gold   #F5C518  — primary accent / CTAs
+ *   red    #E11D48  — vivid festive crimson
+ *   navy   #0E1333  — dark base
+ *   plum   #1A0F2E  — deeper night tone for gradients
+ *   card   #FFFFFF  — product cards
+ */
+:root {
+  --color-gold: #f5c518;
+  --color-gold-light: #ffe066;
+  --color-red: #e11d48;
+  --color-red-deep: #9f1239;
+  --color-navy: #0e1333;
+  --color-plum: #1a0f2e;
+  --color-cream: #fdf6e9;
+  --color-card: #ffffff;
+  --color-text: #1c1f2e;
+  --color-text-muted: #6b7180;
+
+  --shadow-soft: 0 6px 20px rgba(14, 19, 51, 0.1);
+  --shadow-card-hover: 0 16px 40px rgba(14, 19, 51, 0.22);
+  --shadow-glow: 0 0 32px rgba(245, 197, 24, 0.35);
+
+  --radius-card: 1.25rem;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    color: var(--color-text);
+    background-color: var(--color-cream);
+    /* Warm festive page wash. */
+    background-image:
+      radial-gradient(1200px 600px at 85% -10%, rgba(245, 197, 24, 0.12), transparent 60%),
+      radial-gradient(900px 500px at -10% 10%, rgba(225, 29, 72, 0.08), transparent 55%);
+    font-family: var(--font-poppins, "Poppins"), "Segoe UI", system-ui,
+      -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+@layer components {
+  .soft-shadow {
+    box-shadow: var(--shadow-soft);
+  }
+
+  /* Premium white product/content card. */
+  .card {
+    background-color: var(--color-card);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-soft);
+    border: 1px solid rgba(14, 19, 51, 0.06);
+    overflow: hidden;
+  }
+
+  .card-hover {
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card-hover);
+    border-color: rgba(245, 197, 24, 0.5);
+  }
+
+  /* Dark festive night gradient (hero, nav, footers). */
+  .festive-bg {
+    background: linear-gradient(160deg, var(--color-navy) 0%, var(--color-plum) 60%, #2a1140 100%);
+  }
+
+  /* Glassmorphism surface for overlays / sticky bars. */
+  .glass {
+    background: rgba(14, 19, 51, 0.55);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .glass-light {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+  }
+
+  /* Gold gradient text for display headings. */
+  .text-gold-gradient {
+    background: linear-gradient(100deg, #ffe066, #f5c518 40%, #ff8a3d);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Primary festive button. */
+  .btn-festive {
+    background: linear-gradient(100deg, var(--color-gold), #ffb020);
+    color: var(--color-navy);
+    box-shadow: 0 8px 20px rgba(245, 197, 24, 0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+  }
+  .btn-festive:hover {
+    filter: brightness(1.04);
+    transform: translateY(-1px);
+    box-shadow: 0 12px 26px rgba(245, 197, 24, 0.45);
+  }
+}
+
+@layer utilities {
+  /* Entrance animations. */
+  @keyframes sri-fade-up {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-up {
+    animation: sri-fade-up 0.5s ease both;
+  }
+
+  @keyframes sri-pop {
+    0% { transform: scale(0.9); opacity: 0.6; }
+    60% { transform: scale(1.06); opacity: 1; }
+    100% { transform: scale(1); }
+  }
+  .animate-pop {
+    animation: sri-pop 0.4s ease both;
+  }
+
+  /* Hide scrollbars on horizontal chip rails. */
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Honor reduced-motion globally. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,1072 @@
+{
+  "pbtResults": {
+    "3.3 Write property test for category mapping totality": {
+      "status": "passed",
+      "lastRunTimestamp": 1791227931253
+    },
+    "6.2 Write property test for search filtering": {
+      "status": "passed",
+      "lastRunTimestamp": 1791228618517
+    },
+    "8.2 Write property test for required-field validation": {
+      "status": "passed",
+      "lastRunTimestamp": 1791228629301
+    },
+    "8.3 Write property test for mobile validation": {
+      "status": "passed",
+      "lastRunTimestamp": 1791228736351
+    },
+    "8.4 Write property test for email validation": {
+      "status": "passed",
+      "lastRunTimestamp": 1791228755119
+    },
+    "8.5 Write property test for sub-minimum line detection": {
+      "status": "passed",
+      "lastRunTimestamp": 1791228769920
+    },
+    "9.2 Write property test for Order ID format round-trip": {
+      "status": "passed",
+      "lastRunTimestamp": 1791228773323
+    },
+    "10.3 Write property test for email body completeness": {
+      "status": "passed",
+      "lastRunTimestamp": 1791228896619
+    }
+  },
+  "executionHistory": {
+    "1. Scaffold the Next.js + TypeScript + Tailwind project": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791227073170
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791227105269
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791227508050
+      }
+    ],
+    "2.1 Extract every product into `data/products.json`": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791227075220
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791227093599
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791227508683
+      }
+    ],
+    "3.1 Create shared TypeScript types in `lib/types.ts`": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791227076308
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791227531880
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791227755557
+      }
+    ],
+    "3.2 Implement the category-to-chip mapping in `data/categoryMap.ts`": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791227076506
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791227532703
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791227758010
+      }
+    ],
+    "4.1 Implement pure total selectors in `lib/cart/cartTotals.ts`": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791227076630
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791227970662
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791228194172
+      }
+    ],
+    "4.3 Implement the cart reducer in `lib/cart/cartReducer.ts`": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791227076766
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791228326455
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791228498252
+      }
+    ],
+    "5.1 Implement `lib/cart/CartContext.tsx`": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791227076902
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791228940957
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791229122797
+      }
+    ],
+    "6.1 Implement `filterProducts(catalogue, query)` in `lib/search.ts`": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791227077019
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791227972037
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791228190882
+      }
+    ],
+    "7. Checkpoint - Ensure data, mapping, cart, and search tests pass": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791227077150
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791229636586
+      }
+    ],
+    "8.1 Implement validators in `lib/validation.ts`": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791227077303
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791228215352
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791228315982
+      }
+    ],
+    "8.6 Implement the HTML sanitizer in `lib/sanitize.ts`": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791227077444
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791227973022
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791228192959
+      }
+    ],
+    "9.1 Implement `lib/orderId.ts`": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791227077560
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791227973968
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791228194856
+      }
+    ],
+    "9.5 Implement `lib/idempotency.ts`": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791227077683
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791227974807
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791228191793
+      }
+    ],
+    "10.1 Implement `lib/email/mailer.ts`": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791227077826
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791228327882
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791228495850
+      }
+    ],
+    "10.2 Implement `lib/email/orderEmailTemplate.ts`": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791227077988
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791228328800
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791228494973
+      }
+    ],
+    "11.1 Implement `app/api/order/route.ts`": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791227078088
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791228939555
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791229121896
+      }
+    ],
+    "11.3 Create `.env.example`": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791227078207
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791228329757
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791228499159
+      }
+    ],
+    "12. Checkpoint - Ensure backend and email tests pass": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791227078351
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791229488778
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791229635878
+      }
+    ],
+    "13.1 Define the palette and theme in `styles/globals.css` and `tailwind.config.ts`": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791227078447
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791228330686
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791228497296
+      }
+    ],
+    "13.2 Implement `components/QuantitySelector.tsx`": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791227078558
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791228941626
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791229123564
+      }
+    ],
+    "14.1 Implement `components/ProductCard.tsx`": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791227078706
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791229647392
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791229798481
+      }
+    ],
+    "14.2 Implement `components/ProductGrid.tsx`": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791227078839
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791230082708
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791230340472
+      }
+    ],
+    "14.3 Implement `components/CategoryChips.tsx`": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791227078951
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791229646330
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791229796593
+      }
+    ],
+    "14.4 Implement `components/SearchBar.tsx`": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791227079066
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791229645360
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791229795692
+      }
+    ],
+    "15.1 Implement `components/Header.tsx`": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791227079196
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791229644469
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791229799351
+      }
+    ],
+    "15.2 Implement `components/Hero.tsx`": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791227079325
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791229643034
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791229797546
+      }
+    ],
+    "15.3 Implement `components/BottomNav.tsx`": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791227079457
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791229809797
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791229954394
+      }
+    ],
+    "15.4 Implement `components/ContactSection.tsx`": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791227079564
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791229969407
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791230066515
+      }
+    ],
+    "16.1 Implement `components/CartBar.tsx`": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791227079694
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791229805942
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791229958095
+      }
+    ],
+    "16.2 Implement `components/CartList.tsx`": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791227079821
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791229807065
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791229957208
+      }
+    ],
+    "17.1 Implement `components/OrderSummary.tsx`": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791227079992
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791229807928
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791229956499
+      }
+    ],
+    "17.2 Implement `components/CheckoutForm.tsx`": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791227080101
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791230082833
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791230341134
+      }
+    ],
+    "17.3 Implement `components/Confirmation.tsx`": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791227080214
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791229809083
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791229955303
+      }
+    ],
+    "18.1 Wire the root layout and home page": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791227080326
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791230347649
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791230624243
+      }
+    ],
+    "18.2 Wire the catalogue page `app/catalogue/page.tsx`": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791227080449
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791230631971
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791230935031
+      }
+    ],
+    "18.3 Wire the cart page `app/cart/page.tsx`": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791227080577
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791230349094
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791230622422
+      }
+    ],
+    "18.4 Wire the checkout page and submit flow `app/checkout/page.tsx`": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791227080738
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791230632899
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791230935880
+      }
+    ],
+    "18.5 Wire the confirmation page `app/confirmation/page.tsx`": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791227080864
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791230350005
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791230621521
+      }
+    ],
+    "19. Final checkpoint - Ensure all tests pass": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791227080972
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791231261194
+      }
+    ],
+    "2. Extract and verify all 186 products from the Price List PDF": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791227508751
+      }
+    ],
+    "3. Define shared types and the category-to-chip mapping": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791227758092
+      }
+    ],
+    "2.2 Write a data-verification test for products.json": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791227789685
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791227964225
+      }
+    ],
+    "3.3 Write property test for category mapping totality": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791227790524
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791227965172
+      }
+    ],
+    "6. Implement search filtering": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791228191012
+      }
+    ],
+    "9. Implement the Order ID store and idempotency store": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791228194932
+      }
+    ],
+    "8. Implement the shared validation and sanitization modules": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791228316088
+      }
+    ],
+    "10. Implement the email mailer and template": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791228495931
+      }
+    ],
+    "4. Implement cart totals and the cart reducer": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791228498324
+      }
+    ],
+    "4.2 Write property test for cart totals": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791228511250
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791228656541
+      }
+    ],
+    "4.4 Write property test for the min-quantity invariant": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791228512701
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791228656048
+      }
+    ],
+    "4.5 Write property test for first-add default quantity": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791228513732
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791228654999
+      }
+    ],
+    "6.2 Write property test for search filtering": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791228514590
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791228653844
+      }
+    ],
+    "8.2 Write property test for required-field validation": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791228515353
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791228652815
+      }
+    ],
+    "8.3 Write property test for mobile validation": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791228663203
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791228794310
+      }
+    ],
+    "8.4 Write property test for email validation": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791228665327
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791228795226
+      }
+    ],
+    "8.5 Write property test for sub-minimum line detection": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791228666734
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791228791898
+      }
+    ],
+    "8.7 Write property test for sanitization safety": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791228667595
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791228795851
+      }
+    ],
+    "9.2 Write property test for Order ID format round-trip": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791228668260
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791228793309
+      }
+    ],
+    "10.4 Write unit test for the email subject": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791228802411
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791228930233
+      }
+    ],
+    "10.3 Write property test for email body completeness": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791228803360
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791228929305
+      }
+    ],
+    "9.6 Write property test for idempotent replay": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791228804309
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791228932328
+      }
+    ],
+    "9.4 Write unit test for Order ID exhaustion": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791228805495
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791228931412
+      }
+    ],
+    "9.3 Write property test for concurrent Order ID uniqueness": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791228806217
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791228933283
+      }
+    ],
+    "11. Implement the `/api/order` backend route": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791229122026
+      }
+    ],
+    "5. Implement the Cart context with localStorage persistence": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791229122910
+      }
+    ],
+    "13. Implement the visual theme and base UI primitives": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791229123661
+      }
+    ],
+    "11.2 Write integration tests for `/api/order` (SMTP mocked)": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791229134330
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791229398288
+      }
+    ],
+    "5.2 Write unit tests for CartContext persistence": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791229135894
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791229399021
+      }
+    ],
+    "16. Implement cart UI components": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791229958179
+      }
+    ],
+    "15. Implement header, hero, navigation, and contact components": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791230066605
+      }
+    ],
+    "13.3 Write component tests for QuantitySelector": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791230073654
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791230339309
+      }
+    ],
+    "14.5 Write component tests for catalogue components": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791230074288
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791230338150
+      }
+    ],
+    "14. Implement catalogue UI components": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791230340569
+      }
+    ],
+    "17. Implement checkout, order summary, and confirmation components": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791230341246
+      }
+    ],
+    "17.4 Write component test for submit-button disabling": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791230350781
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791230623334
+      }
+    ],
+    "18. Wire pages and the client submit flow": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791230936048
+      }
+    ],
+    "20. Write an end-to-end smoke test of the full journey": [
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791230959793
+      },
+      {
+        "executionId": "0c4b6c14-b123-49d4-b250-21a92dc938cd",
+        "chatSessionId": "sess_18482e30-1767-4416-ba28-f5242f7361e1",
+        "timestamp": 1791231260488
+      }
+    ]
+  }
+}

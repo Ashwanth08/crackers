@@ -1,0 +1,31 @@
+# dependencies
+/node_modules
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# env files (secrets never committed)
+.env
+.env*.local
+
+# server-side runtime stores
+/data/.order-counter
+/data/.idempotency.json
+
+# stray local scratch / test artifacts
+.status.txt
+.staged.txt
+.*.result.json
+data/_verify.txt
+tests/.*.result.json

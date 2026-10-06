@@ -150,3 +150,50 @@ export class FileIdempotencyStore implements IdempotencyStore {
     await writeFile(this.filePath, JSON.stringify(store, null, 2), "utf8");
   }
 }
+
+/**
+ * Redis-backed {@link IdempotencyStore} for multi-instance / serverless hosting
+ * (e.g. Vercel). Stores each response under a namespaced key with a native
+ * Redis TTL (`PX` = milliseconds), so expiry is handled by Redis and the entry
+ * is shared across all instances.
+ */
+export class RedisIdempotencyStore implements IdempotencyStore {
+  // Minimal structural type to avoid a hard dependency on the client types.
+  private readonly redis: {
+    get(key: string): Promise<unknown>;
+    set(key: string, value: string, opts: { px: number }): Promise<unknown>;
+  };
+  private readonly prefix: string;
+
+  constructor(
+    redis: {
+      get(key: string): Promise<unknown>;
+      set(key: string, value: string, opts: { px: number }): Promise<unknown>;
+    },
+    prefix = "sri:idem:",
+  ) {
+    this.redis = redis;
+    this.prefix = prefix;
+  }
+
+  async get(key: string): Promise<OrderResponse | undefined> {
+    const raw = await this.redis.get(this.prefix + key);
+    if (raw === null || raw === undefined) {
+      return undefined;
+    }
+    // Upstash may return the value already parsed (object) or as a string
+    // depending on how it was stored; handle both defensively.
+    if (typeof raw === "object") {
+      return raw as OrderResponse;
+    }
+    try {
+      return JSON.parse(String(raw)) as OrderResponse;
+    } catch {
+      return undefined;
+    }
+  }
+
+  async set(key: string, value: OrderResponse, ttlMs: number): Promise<void> {
+    await this.redis.set(this.prefix + key, JSON.stringify(value), { px: ttlMs });
+  }
+}

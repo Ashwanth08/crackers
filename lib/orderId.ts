@@ -167,3 +167,36 @@ export class FileOrderIdStore implements OrderIdStore {
     await writeFile(this.filePath, String(value), "utf8");
   }
 }
+
+/**
+ * Redis-backed {@link OrderIdStore} for multi-instance / serverless hosting
+ * (e.g. Vercel, where the filesystem is read-only). Uses an atomic Redis
+ * `INCR` so every call across every instance gets a unique, never-reused
+ * sequence number without an in-process mutex.
+ *
+ * The @upstash/redis client speaks HTTP, so it works on serverless/edge Node
+ * functions with no TCP sockets or local filesystem.
+ */
+export class RedisOrderIdStore implements OrderIdStore {
+  // Minimal structural type so we do not hard-depend on the client type here.
+  private readonly redis: { incr(key: string): Promise<number> };
+  private readonly key: string;
+
+  constructor(redis: { incr(key: string): Promise<number> }, key = "sri:order:counter") {
+    this.redis = redis;
+    this.key = key;
+  }
+
+  async next(): Promise<string> {
+    // INCR is atomic and returns the new value; concurrent callers each get a
+    // distinct number (Req 11.2, 11.3).
+    const value = await this.redis.incr(this.key);
+    if (value > MAX_SEQUENCE) {
+      // Range exhausted. We do not reuse numbers; surface the exhaustion
+      // (Req 11.4). The counter stays past-max, which is fine — nothing is
+      // ever issued above MAX_SEQUENCE.
+      throw new OrderIdExhaustedError();
+    }
+    return formatOrderId(value);
+  }
+}

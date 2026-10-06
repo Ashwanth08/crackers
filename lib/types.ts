@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Shared TypeScript types for the Sri Crackers online ordering app.
  *
  * This is a pure type module (no runtime code). All interfaces are shared
@@ -28,7 +28,7 @@ export type ChipLabel =
   | "Gift";
 
 /**
- * Catalogue item — every field is sourced only from the Price List PDF and
+ * Catalogue item â€” every field is sourced only from the Price List PDF and
  * mirrors a record in `data/products.json`.
  * _Requirements: 12.2, 12.5, 6.1_
  */
@@ -39,7 +39,7 @@ export interface Product {
   name: string;
   /** Detailed PDF category. */
   category: string;
-  /** Unit price in INR (₹), > 0. */
+  /** Unit price in INR (â‚¹), > 0. */
   price: number;
   /** Selling unit from the PDF, e.g. "Packet", "box", "piece", "box - 5 pcs". */
   unit: string;
@@ -61,7 +61,7 @@ export interface CartLineItem {
   category: string;
   /** Snapshot of the selling unit for the email table. */
   unit: string;
-  /** Unit price snapshot (₹). */
+  /** Unit price snapshot (â‚¹). */
   price: number;
   /** Minimum-quantity snapshot used for enforcement. */
   minimumQuantity: number;
@@ -134,6 +134,7 @@ export type OrderErrorCode =
   | "VALIDATION"
   | "EMPTY_CART"
   | "MIN_QUANTITY"
+  | "MIN_ORDER_VALUE"
   | "ID_EXHAUSTED"
   | "EMAIL_FAILED"
   | "SERVER_ERROR";
@@ -158,3 +159,4 @@ export interface OrderResponse {
   /** Human-readable message; never contains secrets. */
   message?: string;
 }
+

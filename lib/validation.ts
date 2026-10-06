@@ -162,3 +162,24 @@ export function validateOrder(
 ): ValidationError[] {
   return [...validateCustomer(customer), ...validateCartItems(items)];
 }
+
+/**
+ * Minimum order value in Indian Rupees. An order whose grand total is below
+ * this amount is rejected on both the client (submit guard) and the server
+ * (authoritative re-check), mirroring the shared-validation pattern used for
+ * the other order rules.
+ */
+export const MINIMUM_ORDER_VALUE = 2000;
+
+/** True when a grand total is below the minimum order value. */
+export function isBelowMinimumOrderValue(grandTotal: number): boolean {
+  return grandTotal < MINIMUM_ORDER_VALUE;
+}
+
+/** Human-readable message shown when the cart is below the minimum order value. */
+export function minimumOrderValueMessage(grandTotal: number): string {
+  const shortfall = Math.max(0, MINIMUM_ORDER_VALUE - grandTotal);
+  return `Minimum order value is ₹${MINIMUM_ORDER_VALUE.toLocaleString(
+    "en-IN",
+  )}. Please add ₹${shortfall.toLocaleString("en-IN")} more to place your order.`;
+}

@@ -1,10 +1,10 @@
-/**
- * Order pipeline — SERVER-ONLY core logic for POST /api/order.
+﻿/**
+ * Order pipeline â€” SERVER-ONLY core logic for POST /api/order.
  *
  * This module holds the full order-handling pipeline and its helpers. It is
  * kept SEPARATE from the App Router route module (`route.ts`) because Next.js
- * route modules may only export recognised route handlers (GET/POST/…) and
- * config (`runtime`, `dynamic`, …); exporting anything else (like
+ * route modules may only export recognised route handlers (GET/POST/â€¦) and
+ * config (`runtime`, `dynamic`, â€¦); exporting anything else (like
  * `handleOrder` or `OrderDeps`) breaks `next build` with a generated
  * route-type error. The route re-imports {@link handleOrder} from here.
  *
@@ -27,7 +27,12 @@
  */
 
 import products from "../../../data/products.json";
-import { validateCustomer, validateCartItems } from "../../../lib/validation";
+import {
+  validateCustomer,
+  validateCartItems,
+  isBelowMinimumOrderValue,
+  minimumOrderValueMessage,
+} from "../../../lib/validation";
 import { sanitizeCustomerText } from "../../../lib/sanitize";
 import {
   OrderIdExhaustedError,
@@ -55,7 +60,7 @@ import type {
 /**
  * Server-side product catalogue indexed by `id` for O(1) resolution. Built
  * once at module load from the trusted `products.json` so client-supplied
- * prices/names are always ignored (Req 12.5, 8.10 of the design — server is
+ * prices/names are always ignored (Req 12.5, 8.10 of the design â€” server is
  * the source of truth).
  */
 const PRODUCTS_BY_ID: Map<number, Product> = new Map(
@@ -94,7 +99,7 @@ function isObject(value: unknown): value is Record<string, unknown> {
 
 /**
  * Shape-check the raw request body (Req 20.3). We only confirm the top-level
- * structure here — a non-empty string `idempotencyKey`, an object `customer`,
+ * structure here â€” a non-empty string `idempotencyKey`, an object `customer`,
  * and an array `items`. Per-field and per-line validation happens later via the
  * shared validators (Req 8.9), and item contents are resolved against the
  * catalogue (Req 12.5).
@@ -227,7 +232,7 @@ function sanitizeCustomer(customer: CustomerDetails): CustomerDetails {
  *
  * Pipeline (see module header for the requirement mapping):
  *   1. Shape-check the body.
- *   2. Idempotent replay — return the stored response if the key was seen.
+ *   2. Idempotent replay â€” return the stored response if the key was seen.
  *   3. Resolve items against the trusted catalogue.
  *   4. Re-validate customer + items on the server (Req 8.9).
  *   5. Sanitize customer fields for the email.
@@ -302,6 +307,20 @@ export async function handleOrder(
     0,
   );
 
+  // 6b. Enforce the minimum order value on the server (authoritative). The
+  // client also guards this, but the server re-check prevents bypass.
+  if (isBelowMinimumOrderValue(grandTotal)) {
+    return {
+      status: 400,
+      response: {
+        success: false,
+        errorCode: "MIN_ORDER_VALUE",
+        grandTotal,
+        message: minimumOrderValueMessage(grandTotal),
+      },
+    };
+  }
+
   // 7. Allocate the Order ID (Req 11.1, 11.4).
   let orderId: string;
   try {
@@ -355,7 +374,7 @@ export async function handleOrder(
     };
   }
 
-  // 9. Success — record for idempotent replay and return (Req 8.11, 20.3).
+  // 9. Success â€” record for idempotent replay and return (Req 8.11, 20.3).
   const response: OrderResponse = {
     success: true,
     orderId,
@@ -371,3 +390,4 @@ export async function handleOrder(
 
   return { status: 200, response };
 }
+

@@ -1,20 +1,20 @@
-// tests/apiOrder.test.ts
+﻿// tests/apiOrder.test.ts
 //
 // Integration tests for the exported `handleOrder(body, deps)` pipeline from
 // app/api/order/handler.ts (Task 11.2). The handler is imported directly and
-// driven with in-memory stores and a mock mailer — no HTTP server and no real
+// driven with in-memory stores and a mock mailer â€” no HTTP server and no real
 // SMTP connection are involved.
 //
 // Validates: Requirements 8.9, 8.11, 8.12, 9.1, 20.3, 20.4
 //
-//   8.9  — the server re-validates every order from scratch and rejects
+//   8.9  â€” the server re-validates every order from scratch and rejects
 //          invalid payloads before sending the email.
-//   8.11 — a replayed submission with the same idempotency key returns the
+//   8.11 â€” a replayed submission with the same idempotency key returns the
 //          original result without creating a new order.
-//   8.12 — the Order ID is well-formed ("SC-2026-NNNNN").
-//   9.1  — a valid order sends exactly one owner notification email.
-//   20.3 — the response carries the Order ID and recomputed totals.
-//   20.4 — failures map to machine-readable error codes and never leak secrets.
+//   8.12 â€” the Order ID is well-formed ("SC-2026-NNNNN").
+//   9.1  â€” a valid order sends exactly one owner notification email.
+//   20.3 â€” the response carries the Order ID and recomputed totals.
+//   20.4 â€” failures map to machine-readable error codes and never leak secrets.
 
 import { describe, expect, it, vi } from "vitest";
 
@@ -30,7 +30,7 @@ import type { CustomerDetails, OrderResponse } from "../lib/types";
 
 /**
  * In-memory, sequential Order ID store returning "SC-2026-00001",
- * "SC-2026-00002", … It mirrors the real store's format without touching the
+ * "SC-2026-00002", â€¦ It mirrors the real store's format without touching the
  * filesystem.
  */
 class InMemoryOrderIdStore implements OrderIdStore {
@@ -101,12 +101,13 @@ const validCustomer: CustomerDetails = {
   notes: "Please deliver before Diwali.",
 };
 
-/** Build a minimal valid order body. Product 1 (price 10, min 1). */
+/** Build a valid order body that clears the 2000 minimum order value.
+ *  Product 1 (price 10) x 250 = 2500. */
 function validBody(idempotencyKey = "key-valid-1") {
   return {
     idempotencyKey,
     customer: { ...validCustomer },
-    items: [{ productId: 1, quantity: 1 }],
+    items: [{ productId: 1, quantity: 250 }],
   };
 }
 
@@ -140,7 +141,7 @@ function collectKeys(value: unknown, out: string[] = []): string[] {
 // ---------------------------------------------------------------------------
 
 describe("handleOrder integration (Task 11.2)", () => {
-  it("1. valid payload → 200, success, well-formed Order ID, correct totals, one email (Req 8.12, 9.1, 20.3)", async () => {
+  it("1. valid payload â†’ 200, success, well-formed Order ID, correct totals, one email (Req 8.12, 9.1, 20.3)", async () => {
     const mailer = makeMockMailer();
     const deps = makeDeps(mailer);
 
@@ -149,14 +150,14 @@ describe("handleOrder integration (Task 11.2)", () => {
     expect(result.status).toBe(200);
     expect(result.response.success).toBe(true);
     expect(result.response.orderId).toMatch(/^SC-2026-\d{5}$/);
-    // Product 1: price 10, quantity 1 → one product, one unit, ₹10.
+    // Product 1: price 10, quantity 1 â†’ one product, one unit, â‚¹10.
     expect(result.response.grandTotal).toBe(10);
     expect(result.response.totalProducts).toBe(1);
     expect(result.response.totalQuantity).toBe(1);
     expect(mailer.sendOrderEmail).toHaveBeenCalledTimes(1);
   });
 
-  it("2. invalid customer (empty fullName) → 400, errors includes fullName, no email (Req 8.9)", async () => {
+  it("2. invalid customer (empty fullName) â†’ 400, errors includes fullName, no email (Req 8.9)", async () => {
     const mailer = makeMockMailer();
     const deps = makeDeps(mailer);
 
@@ -172,7 +173,7 @@ describe("handleOrder integration (Task 11.2)", () => {
     expect(mailer.sendOrderEmail).not.toHaveBeenCalled();
   });
 
-  it("3. empty items → 400 EMPTY_CART, no email (Req 8.9, 20.4)", async () => {
+  it("3. empty items â†’ 400 EMPTY_CART, no email (Req 8.9, 20.4)", async () => {
     const mailer = makeMockMailer();
     const deps = makeDeps(mailer);
 
@@ -186,7 +187,7 @@ describe("handleOrder integration (Task 11.2)", () => {
     expect(mailer.sendOrderEmail).not.toHaveBeenCalled();
   });
 
-  it("4. quantity below minimum → 400 MIN_QUANTITY, no email (Req 8.9, 20.4)", async () => {
+  it("4. quantity below minimum â†’ 400 MIN_QUANTITY, no email (Req 8.9, 20.4)", async () => {
     const mailer = makeMockMailer();
     const deps = makeDeps(mailer);
 
@@ -201,7 +202,7 @@ describe("handleOrder integration (Task 11.2)", () => {
     expect(mailer.sendOrderEmail).not.toHaveBeenCalled();
   });
 
-  it("5. unknown productId → 400 VALIDATION, no email (Req 8.9)", async () => {
+  it("5. unknown productId â†’ 400 VALIDATION, no email (Req 8.9)", async () => {
     const mailer = makeMockMailer();
     const deps = makeDeps(mailer);
 
@@ -215,7 +216,23 @@ describe("handleOrder integration (Task 11.2)", () => {
     expect(mailer.sendOrderEmail).not.toHaveBeenCalled();
   });
 
-  it("6. same idempotency key twice → second returns the original, one email total (Req 8.11)", async () => {
+  it("5b. below minimum order value -> 400 MIN_ORDER_VALUE, no email", async () => {
+    const mailer = makeMockMailer();
+    const deps = makeDeps(mailer);
+
+    // Product 1 (price 10) x 10 = 100, well below the 2000 minimum.
+    const body = { ...validBody("key-min-order"), items: [{ productId: 1, quantity: 10 }] };
+
+    const result = await handleOrder(body, deps);
+
+    expect(result.status).toBe(400);
+    expect(result.response.success).toBe(false);
+    expect(result.response.errorCode).toBe("MIN_ORDER_VALUE");
+    expect(result.response.grandTotal).toBe(100);
+    expect(mailer.sendOrderEmail).not.toHaveBeenCalled();
+  });
+
+  it("6. same idempotency key twice â†’ second returns the original, one email total (Req 8.11)", async () => {
     const mailer = makeMockMailer();
     const deps = makeDeps(mailer);
 
@@ -231,7 +248,7 @@ describe("handleOrder integration (Task 11.2)", () => {
     expect(mailer.sendOrderEmail).toHaveBeenCalledTimes(1);
   });
 
-  it("7. email failure → 502 EMAIL_FAILED with orderId, idempotency not recorded; retry resends (Req 20.4, 8.11)", async () => {
+  it("7. email failure â†’ 502 EMAIL_FAILED with orderId, idempotency not recorded; retry resends (Req 20.4, 8.11)", async () => {
     const failing = makeFailingMailer();
     const deps = makeDeps(failing);
 
@@ -288,3 +305,5 @@ describe("handleOrder integration (Task 11.2)", () => {
     expect((failResult.response.message as string).length).toBeGreaterThan(0);
   });
 });
+
+

@@ -14,6 +14,9 @@ import { validateCustomer } from "../lib/validation";
 
 export interface CheckoutFormProps {
   submitting: boolean;
+  /** Optional extra disable (e.g. below minimum order value) that does NOT
+   *  change the button label the way `submitting` does. */
+  disabled?: boolean;
   serverErrors?: ValidationError[];
   onSubmit: (customer: CustomerDetails) => void;
 }
@@ -27,7 +30,7 @@ function fieldClass(hasError: boolean): string {
   return `${FIELD_BASE} ${hasError ? "border-festive-red" : "border-navy/15"}`;
 }
 
-export default function CheckoutForm({ submitting, serverErrors, onSubmit }: CheckoutFormProps) {
+export default function CheckoutForm({ submitting, disabled, serverErrors, onSubmit }: CheckoutFormProps) {
   const [fullName, setFullName] = useState("");
   const [mobile, setMobile] = useState("");
   const [email, setEmail] = useState("");
@@ -101,7 +104,7 @@ export default function CheckoutForm({ submitting, serverErrors, onSubmit }: Che
           <textarea id="checkout-notes" name="notes" rows={3} value={notes} onChange={(e) => setNotes(e.target.value)} className={fieldClass(false)} />
         </Field>
 
-        <button type="submit" disabled={submitting} aria-busy={submitting || undefined} className="btn-festive mt-1 min-h-[52px] w-full rounded-pill px-6 text-base font-bold uppercase tracking-wide focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60">
+        <button type="submit" disabled={submitting || disabled} aria-busy={submitting || undefined} className="btn-festive mt-1 min-h-[52px] w-full rounded-pill px-6 text-base font-bold uppercase tracking-wide focus:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60">
           {submitting ? "Submitting..." : "SUBMIT ORDER"}
         </button>
       </form>
@@ -133,3 +136,4 @@ function Field({ id, label, required, error, children }: FieldProps) {
     </div>
   );
 }
+

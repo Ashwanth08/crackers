@@ -1,0 +1,183 @@
+TSC=0  
+[33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m
+
+[1m[7m[36m RUN [39m[27m[22m [36mv2.1.9 [39m[90mC:/Test[39m
+
+ [32m✓[39m tests/e2e.smoke.test.ts [2m([22m[2m1 test[22m[2m)[22m[90m 68[2mms[22m[39m
+[90mstderr[2m | tests/apiOrder.test.ts[2m > [22m[2mhandleOrder integration (Task 11.2)[2m > [22m[2m7. email failure â†’ 502 EMAIL_FAILED with orderId, idempotency not recorded; retry resends (Req 20.4, 8.11)
+[22m[39mOrder email send failed Error: SMTP connection refused
+    at Object.<anonymous> [90m(C:\Test\[39mtests\apiOrder.test.ts:77:13[90m)[39m
+    at Object.mockCall [90m(file:///C:/Test/[39mnode_modules/[4m@vitest/spy[24m/dist/index.js:61:17[90m)[39m
+    at Object.spy [as sendOrderEmail] [90m(file:///C:/Test/[39mnode_modules/[4mtinyspy[24m/dist/index.js:45:80[90m)[39m
+    at Module.handleOrder [90m(C:\Test\[39mapp\api\order\handler.ts:357:23[90m)[39m
+[90m    at processTicksAndRejections (node:internal/process/task_queues:104:5)[39m
+    at [90mC:\Test\[39mtests\apiOrder.test.ts:255:20
+    at [90mfile:///C:/Test/[39mnode_modules/[4m@vitest/runner[24m/dist/index.js:533:5
+    at runTest [90m(file:///C:/Test/[39mnode_modules/[4m@vitest/runner[24m/dist/index.js:1056:11[90m)[39m
+    at runSuite [90m(file:///C:/Test/[39mnode_modules/[4m@vitest/runner[24m/dist/index.js:1205:15[90m)[39m
+    at runSuite [90m(file:///C:/Test/[39mnode_modules/[4m@vitest/runner[24m/dist/index.js:1205:15[90m)[39m
+Order email send failed Error: SMTP connection refused
+    at Object.<anonymous> [90m(C:\Test\[39mtests\apiOrder.test.ts:77:13[90m)[39m
+    at Object.mockCall [90m(file:///C:/Test/[39mnode_modules/[4m@vitest/spy[24m/dist/index.js:61:17[90m)[39m
+    at Object.spy [as sendOrderEmail] [90m(file:///C:/Test/[39mnode_modules/[4mtinyspy[24m/dist/index.js:45:80[90m)[39m
+    at Module.handleOrder [90m(C:\Test\[39mapp\api\order\handler.ts:357:23[90m)[39m
+[90m    at processTicksAndRejections (node:internal/process/task_queues:104:5)[39m
+    at [90mC:\Test\[39mtests\apiOrder.test.ts:265:5
+    at [90mfile:///C:/Test/[39mnode_modules/[4m@vitest/runner[24m/dist/index.js:533:5
+    at runTest [90m(file:///C:/Test/[39mnode_modules/[4m@vitest/runner[24m/dist/index.js:1056:11[90m)[39m
+    at runSuite [90m(file:///C:/Test/[39mnode_modules/[4m@vitest/runner[24m/dist/index.js:1205:15[90m)[39m
+    at runSuite [90m(file:///C:/Test/[39mnode_modules/[4m@vitest/runner[24m/dist/index.js:1205:15[90m)[39m
+
+[90mstderr[2m | tests/apiOrder.test.ts[2m > [22m[2mhandleOrder integration (Task 11.2)[2m > [22m[2m8. responses carry no SMTP secrets and expose no password-like fields (Req 20.4)
+[22m[39mOrder email send failed Error: SMTP connection refused
+    at Object.<anonymous> [90m(C:\Test\[39mtests\apiOrder.test.ts:77:13[90m)[39m
+    at Object.mockCall [90m(file:///C:/Test/[39mnode_modules/[4m@vitest/spy[24m/dist/index.js:61:17[90m)[39m
+    at Object.spy [as sendOrderEmail] [90m(file:///C:/Test/[39mnode_modules/[4mtinyspy[24m/dist/index.js:45:80[90m)[39m
+    at Module.handleOrder [90m(C:\Test\[39mapp\api\order\handler.ts:357:23[90m)[39m
+[90m    at processTicksAndRejections (node:internal/process/task_queues:104:5)[39m
+    at [90mC:\Test\[39mtests\apiOrder.test.ts:276:24
+    at [90mfile:///C:/Test/[39mnode_modules/[4m@vitest/runner[24m/dist/index.js:533:5
+    at runTest [90m(file:///C:/Test/[39mnode_modules/[4m@vitest/runner[24m/dist/index.js:1056:11[90m)[39m
+    at runSuite [90m(file:///C:/Test/[39mnode_modules/[4m@vitest/runner[24m/dist/index.js:1205:15[90m)[39m
+    at runSuite [90m(file:///C:/Test/[39mnode_modules/[4m@vitest/runner[24m/dist/index.js:1205:15[90m)[39m
+
+ [31m❯[39m tests/apiOrder.test.ts [2m([22m[2m9 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[90m 98[2mms[22m[39m
+[31m   [31m×[31m handleOrder integration (Task 11.2)[2m > [22m1. valid payload â†’ 200, success, well-formed Order ID, correct totals, one email (Req 8.12, 9.1, 20.3)[90m 69[2mms[22m[31m[39m
+[31m     → expected 2500 to be 10 // Object.is equality[39m
+ [32m✓[39m tests/products.test.ts [2m([22m[2m12 tests[22m[2m)[22m[90m 74[2mms[22m[39m
+ [32m✓[39m tests/validation.mobile.test.ts [2m([22m[2m6 tests[22m[2m)[22m[90m 119[2mms[22m[39m
+ [32m✓[39m tests/validation.required.test.ts [2m([22m[2m6 tests[22m[2m)[22m[90m 127[2mms[22m[39m
+ [32m✓[39m tests/validation.cartitems.test.ts [2m([22m[2m4 tests[22m[2m)[22m[90m 158[2mms[22m[39m
+ [32m✓[39m tests/cartReducer.minqty.test.ts [2m([22m[2m2 tests[22m[2m)[22m[90m 163[2mms[22m[39m
+ [32m✓[39m tests/orderId.format.test.ts [2m([22m[2m8 tests[22m[2m)[22m[33m 344[2mms[22m[39m
+ [32m✓[39m tests/search.test.ts [2m([22m[2m9 tests[22m[2m)[22m[33m 374[2mms[22m[39m
+ [32m✓[39m tests/CartContext.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[90m 186[2mms[22m[39m
+ [32m✓[39m tests/orderEmailTemplate.test.ts [2m([22m[2m2 tests[22m[2m)[22m[33m 569[2mms[22m[39m
+   [33m[2m✓[22m[39m order email body completeness (Property 13)[2m > [22mHTML body contains heading, orderId, item names, table headers, totals labels, and notes [33m407[2mms[22m[39m
+ [32m✓[39m tests/CheckoutForm.submit.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[33m 483[2mms[22m[39m
+ [32m✓[39m tests/catalogueComponents.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[33m 567[2mms[22m[39m
+   [33m[2m✓[22m[39m ProductCard add-to-cart (Req 2.11)[2m > [22madds the product at its minimum quantity and switches to the in-cart state [33m367[2mms[22m[39m
+ [32m✓[39m tests/orderId.exhaustion.test.ts [2m([22m[2m3 tests[22m[2m)[22m[90m 62[2mms[22m[39m
+ [32m✓[39m tests/sanitize.test.ts [2m([22m[2m6 tests[22m[2m)[22m[90m 135[2mms[22m[39m
+ [32m✓[39m tests/categoryMap.test.ts [2m([22m[2m8 tests[22m[2m)[22m[90m 47[2mms[22m[39m
+ [32m✓[39m tests/orderEmailSubject.test.ts [2m([22m[2m4 tests[22m[2m)[22m[90m 7[2mms[22m[39m
+ [32m✓[39m tests/validation.email.test.ts [2m([22m[2m7 tests[22m[2m)[22m[90m 107[2mms[22m[39m
+ [32m✓[39m tests/QuantitySelector.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[90m 155[2mms[22m[39m
+ [32m✓[39m tests/cartReducer.firstadd.test.ts [2m([22m[2m3 tests[22m[2m)[22m[90m 129[2mms[22m[39m
+ [32m✓[39m tests/cartTotals.test.ts [2m([22m[2m5 tests[22m[2m)[22m[90m 117[2mms[22m[39m
+ [32m✓[39m tests/orderId.concurrent.test.ts [2m([22m[2m2 tests[22m[2m)[22m[33m 2308[2mms[22m[39m
+   [33m[2m✓[22m[39m Property 12: Order IDs are unique across concurrent allocation (Req 11.2, 11.3)[2m > [22m200 concurrent next() calls yield distinct, well-formed, contiguous IDs [33m1560[2mms[22m[39m
+   [33m[2m✓[22m[39m Property 12: Order IDs are unique across concurrent allocation (Req 11.2, 11.3)[2m > [22mholds across several concurrency levels (50, 200) [33m745[2mms[22m[39m
+ [31m❯[39m tests/idempotency.test.ts [2m([22m[2m3 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[33m 14134[2mms[22m[39m
+[31m   [31m×[31m Property 14: Idempotent replay returns the original result (Req 8.11, 18.5)[2m > [22mset then get returns a deep-equal value; an unseen key returns undefined[33m 13848[2mms[22m[31m[39m
+[31m     → Property failed after 14 tests
+{ seed: -785568796, path: "13:80:80:80:80:80:80:80:80", endOnFailure: true }
+Counterexample: ["__proto__"," ",{"success":false}]
+Shrunk 8 time(s)
+Got AssertionError: expected undefined to deeply equal { success: false }
+    at C:\Test\tests\idempotency.test.ts:115:23
+    at AsyncProperty.run (file:///C:/Test/node_modules/fast-check/lib/esm/check/property/AsyncProperty.generic.js:46:28)
+    at asyncRunIt (file:///C:/Test/node_modules/fast-check/lib/esm/check/runner/Runner.js:33:21)
+    at C:\Test\tests\idempotency.test.ts:103:5
+    at file:///C:/Test/node_modules/@vitest/runner/dist/index.js:533:5
+    at runTest (file:///C:/Test/node_modules/@vitest/runner/dist/index.js:1056:11)
+    at runSuite (file:///C:/Test/node_modules/@vitest/runner/dist/index.js:1205:15)
+    at runSuite (file:///C:/Test/node_modules/@vitest/runner/dist/index.js:1205:15)
+    at runFiles (file:///C:/Test/node_modules/@vitest/runner/dist/index.js:1262:5)
+    at startTests (file:///C:/Test/node_modules/@vitest/runner/dist/index.js:1271:3)
+
+Hint: Enable verbose mode in order to have the list of all failing values encountered during the run[39m
+
+[31m⎯⎯⎯⎯⎯⎯⎯[1m[7m Failed Tests 2 [27m[22m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[31m[1m[7m FAIL [27m[22m[39m tests/apiOrder.test.ts[2m > [22mhandleOrder integration (Task 11.2)[2m > [22m1. valid payload â†’ 200, success, well-formed Order ID, correct totals, one email (Req 8.12, 9.1, 20.3)
+[31m[1mAssertionError[22m: expected 2500 to be 10 // Object.is equality[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[32m- 10[39m
+[31m+ 2500[39m
+
+[36m [2m❯[22m tests/apiOrder.test.ts:[2m154:40[22m[39m
+    [90m152| [39m    [34mexpect[39m(result[33m.[39mresponse[33m.[39morderId)[33m.[39m[34mtoMatch[39m([36m/^SC-2026-\d{5}$/[39m)[33m;[39m
+    [90m153| [39m    [90m// Product 1: price 10, quantity 1 â†’ one product, one unit, â‚¹1[39m…
+    [90m154| [39m    [34mexpect[39m(result[33m.[39mresponse[33m.[39mgrandTotal)[33m.[39m[34mtoBe[39m([34m10[39m)[33m;[39m
+    [90m   | [39m                                       [31m^[39m
+    [90m155| [39m    [34mexpect[39m(result[33m.[39mresponse[33m.[39mtotalProducts)[33m.[39m[34mtoBe[39m([34m1[39m)[33m;[39m
+    [90m156| [39m    [34mexpect[39m(result[33m.[39mresponse[33m.[39mtotalQuantity)[33m.[39m[34mtoBe[39m([34m1[39m)[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m tests/idempotency.test.ts[2m > [22mProperty 14: Idempotent replay returns the original result (Req 8.11, 18.5)[2m > [22mset then get returns a deep-equal value; an unseen key returns undefined
+[31m[1mError[22m: Property failed after 14 tests
+{ seed: -785568796, path: "13:80:80:80:80:80:80:80:80", endOnFailure: true }
+Counterexample: ["__proto__"," ",{"success":false}]
+Shrunk 8 time(s)
+Got AssertionError: expected undefined to deeply equal { success: false }
+    at C:\Test\tests\idempotency.test.ts:115:23
+    at AsyncProperty.run (file:///C:/Test/node_modules/fast-check/lib/esm/check/property/AsyncProperty.generic.js:46:28)
+    at asyncRunIt (file:///C:/Test/node_modules/fast-check/lib/esm/check/runner/Runner.js:33:21)
+    at C:\Test\tests\idempotency.test.ts:103:5
+    at file:///C:/Test/node_modules/@vitest/runner/dist/index.js:533:5
+    at runTest (file:///C:/Test/node_modules/@vitest/runner/dist/index.js:1056:11)
+    at runSuite (file:///C:/Test/node_modules/@vitest/runner/dist/index.js:1205:15)
+    at runSuite (file:///C:/Test/node_modules/@vitest/runner/dist/index.js:1205:15)
+    at runFiles (file:///C:/Test/node_modules/@vitest/runner/dist/index.js:1262:5)
+    at startTests (file:///C:/Test/node_modules/@vitest/runner/dist/index.js:1271:3)
+
+Hint: Enable verbose mode in order to have the list of all failing values encountered during the run[39m
+[36m [2m❯[22m tests/idempotency.test.ts:[2m115:23[22m[39m
+    [90m113| [39m
+    [90m114| [39m          [35mconst[39m got [33m=[39m [35mawait[39m store[33m.[39m[35mget[39m(key)[33m;[39m
+    [90m115| [39m          [34mexpect[39m(got)[33m.[39m[34mtoEqual[39m(value)[33m;[39m
+    [90m   | [39m                      [31m^[39m
+    [90m116| [39m
+    [90m117| [39m          [35mconst[39m missing [33m=[39m [35mawait[39m store[33m.[39m[35mget[39m(otherKey)[33m;[39m
+[90m [2m❯[22m AsyncProperty.run node_modules/fast-check/lib/esm/check/property/AsyncProperty.generic.js:[2m46:28[22m[39m
+[90m [2m❯[22m asyncRunIt node_modules/fast-check/lib/esm/check/runner/Runner.js:[2m33:21[22m[39m
+[90m [2m❯[22m tests/idempotency.test.ts:[2m103:5[22m[39m
+[90m [2m❯[22m buildError node_modules/fast-check/lib/esm/check/runner/utils/RunDetailsFormatter.js:[2m126:15[22m[39m
+[90m [2m❯[22m asyncThrowIfFailed node_modules/fast-check/lib/esm/check/runner/utils/RunDetailsFormatter.js:[2m143:11[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯[22m[39m
+
+[2m Test Files [22m [1m[31m2 failed[39m[22m[2m | [22m[1m[32m21 passed[39m[22m[90m (23)[39m
+[2m      Tests [22m [1m[31m2 failed[39m[22m[2m | [22m[1m[32m115 passed[39m[22m[90m (117)[39m
+[2m   Start at [22m 01:46:21
+[2m   Duration [22m 82.75s[2m (transform 2.71s, setup 0ms, collect 120.53s, tests 20.53s, environment 348.70s, prepare 17.47s)[22m
+
+VITEST=0  
+  ▲ Next.js 14.2.5
+  - Environments: .env.local
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/9) ...
+   Generating static pages (2/9) 
+   Generating static pages (4/9) 
+   Generating static pages (6/9) 
+ ✓ Generating static pages (9/9)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                              Size     First Load JS
+┌ ○ /                                    2.51 kB        89.6 kB
+├ ○ /_not-found                          871 B          87.9 kB
+├ ƒ /api/order                           0 B                0 B
+├ ○ /cart                                2.88 kB        96.8 kB
+├ ○ /catalogue                           44.2 kB         138 kB
+├ ○ /checkout                            4.1 kB         91.2 kB
+└ ○ /confirmation                        2.73 kB        89.8 kB
++ First Load JS shared by all            87.1 kB
+  ├ chunks/23-16a59eee9bda28b8.js        31.5 kB
+  ├ chunks/fd9d1056-a361059b66705643.js  53.6 kB
+  └ other shared chunks (total)          1.89 kB
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+
+BUILD=0 

@@ -113,7 +113,7 @@ export class FileOrderIdStore implements OrderIdStore {
 
   constructor(filePath?: string) {
     this.filePath =
-      filePath ?? path.join(process.cwd(), "data", ".order-counter");
+      filePath ?? path.join("/tmp", ".order-counter");
   }
 
   async next(): Promise<string> {

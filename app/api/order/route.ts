@@ -1,9 +1,9 @@
-/**
- * POST /api/order — SERVER-ONLY Next.js App Router route handler.
+﻿/**
+ * POST /api/order â€” SERVER-ONLY Next.js App Router route handler.
  *
  * This module is intentionally THIN. Next.js App Router route modules may only
- * export recognised route handlers (GET/POST/…) and config (`runtime`,
- * `dynamic`, …); exporting anything else breaks `next build` with a generated
+ * export recognised route handlers (GET/POST/â€¦) and config (`runtime`,
+ * `dynamic`, â€¦); exporting anything else breaks `next build` with a generated
  * route-type error. The full order pipeline therefore lives in the sibling
  * module `./handler` ({@link handleOrder}, {@link OrderDeps}), and this file
  * exports ONLY `runtime` and `POST`.
@@ -25,8 +25,7 @@
  */
 
 import { handleOrder, type OrderDeps, type HandleOrderResult } from "./handler";
-import { FileOrderIdStore } from "../../../lib/orderId";
-import { FileIdempotencyStore } from "../../../lib/idempotency";
+import { createStores } from "../../../lib/stores";
 import { createMailer } from "../../../lib/email/mailer";
 
 /** The stores and mailer use the Node runtime (fs, Nodemailer). */
@@ -53,9 +52,10 @@ export async function POST(request: Request): Promise<Response> {
   // Build dependencies. Mailer construction may throw on missing env config.
   let deps: OrderDeps;
   try {
+    const stores = createStores();
     deps = {
-      orderIdStore: new FileOrderIdStore(),
-      idempotencyStore: new FileIdempotencyStore(),
+      orderIdStore: stores.orderIdStore,
+      idempotencyStore: stores.idempotencyStore,
       mailer: createMailer(),
     };
   } catch (err) {
@@ -89,7 +89,7 @@ export async function POST(request: Request): Promise<Response> {
     const result = await handleOrder(body, deps);
     return toResponse(result);
   } catch (err) {
-    // Unexpected failure — log server-side, return a generic error.
+    // Unexpected failure â€” log server-side, return a generic error.
     console.error("Unexpected error handling order", err);
     return toResponse({
       status: 500,
@@ -101,3 +101,4 @@ export async function POST(request: Request): Promise<Response> {
     });
   }
 }
+
